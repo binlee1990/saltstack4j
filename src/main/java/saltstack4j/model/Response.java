@@ -2,7 +2,7 @@ package saltstack4j.model;
 
 public interface Response {
 
-    boolean isResult();
+    boolean isSuccess();
 
     String getMessage();
 }
