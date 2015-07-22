@@ -6,8 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
-import saltstack4j.core.transport.LinuxResponse;
 import saltstack4j.core.transport.enums.ChannelType;
+import saltstack4j.model.linux.LinuxResponse;
 
 import com.google.common.base.Charsets;
 import com.jcraft.jsch.Channel;
@@ -58,7 +58,7 @@ public class LinuxCommand {
     private LinuxResponse getLinuxResponse(Channel channel, BufferedReader reader) throws IOException {
         LinuxResponse response = new LinuxResponse();
         if (null == channel || null == reader) {
-            response.setResult(false);
+            response.setSuccess(false);
             return response;
         }
 
@@ -77,7 +77,7 @@ public class LinuxCommand {
             }
         }
 
-        response.setResult(exitCode == 0 ? true : false);
+        response.setSuccess(exitCode == 0 ? true : false);
         response.setMessage(sb.toString());
 
         return response;

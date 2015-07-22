@@ -1,28 +1,28 @@
-package saltstack4j.core.transport;
+package saltstack4j.model.linux;
 
 import saltstack4j.model.Response;
 
 public class LinuxResponse implements Response {
 
-    private boolean result;
+    private boolean success;
     private String message;
 
     public LinuxResponse() {
-        result = true;
+        success = true;
         message = "";
     }
 
     public LinuxResponse(boolean status) {
-        result = status;
+        success = status;
         message = "";
     }
 
-    public boolean isResult() {
-        return result;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setResult(boolean result) {
-        this.result = result;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
     public String getMessage() {
